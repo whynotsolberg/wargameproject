@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Player
+{
+	int num;
+	private Player[] roster;
+	public Player()
+	{
+		ArrayList<Card> hand= new ArrayList<Card>();
+	}
+
+	public static void generate()
+	{
+
+	}
+	public Player(int n)
+	{
+		num=n;
+		ArrayList<Player> comp= new ArrayList<Player>();
+		roster= new Player[num];
+		for (int k=0; k<num; k++)
+		{
+			roster[k]= new Player();
+			comp.add(roster[k]);
+		}
+	}
+	public void deal(Player p, int n)
+	{
+
+	}
+	/*make player objects for each player
+each player object will be a arraylist called hand
+based on the # of players that is determined by scanner input, add the player objects into another
+ArrayList holding all the players (i'll call it roster)
+and then deal into the ArrayList of players (who are arraylists of card) based on roster.size()*/
+
+}
