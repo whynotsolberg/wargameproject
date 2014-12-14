@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class WarGame
+{
+	public static void main(String args[])
+	{
+		String[] suits= {"Spades", "Clubs", "Hearts", "Diamonds"};
+		int[] points= {14,1,2,3,4,5,6,7,8,9,10,11,12};
+		Scanner input= new Scanner(System.in);
+		System.out.print("Number of players: ");
+		int numPlayers=input.nextInt();
+		Deck d= new Deck(points,suits,numPlayers);
+		for (int k=0; k<52; k++)
+		{
+			Card c= d.show();
+			System.out.println(c);
+		}
+		Player pt= new Player(numPlayers);
+		pt.deal(pt,numPlayers);
+		/*Player p1= new Player(); Player p2= new Player(); Player p3= new Player(); Player p4= new Player();
+		Player p5= new Player();*/
+	}
+
+}
