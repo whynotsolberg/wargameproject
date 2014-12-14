@@ -1,0 +1,85 @@
+import java.io.*;
+import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Deck
+{
+	private Card[] deck;
+	private int size;
+	private int numPlayers;
+	public Deck(int[] values,String[] suits,int n)
+	{
+		numPlayers=n;
+		int x=0;
+		size= suits.length*values.length;
+		deck= new Card[size];
+		for (int k=0; k<suits.length; k++)
+		{
+			for (int j=0; j<values.length;j++)
+			{
+				deck[x]= new Card(values[j], suits[k]);
+				x++;
+			}
+		}
+		//shuffle(deck);
+	}
+	public Card show()
+	{
+		if (size==0)
+		{	return null;}
+		else
+		{	size--;
+			return deck[size];}
+	}
+
+	public static Card[] shuffle(Card[] d)
+	{
+		Card[] shuffled= new Card[52];
+		for (int k=0; k<52; k++)
+		{
+			Random rand= new Random(1);
+			int r= rand.nextInt(52);
+			if (d[r]!= null)
+			{
+				d[r]=shuffled[k];
+				d[r]=null;
+			}
+			d[k]=shuffled[k];
+		}
+		return d;
+	}
+	/*public static void shuffle(Card[] d)
+	{
+		for (int k=51; k>0; k--)
+		{
+			Random rand= new Random(1);
+			int r= rand.nextInt(k);
+			d[k]=d[r];
+		//Efficient selection shuffle
+		}
+	}*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
