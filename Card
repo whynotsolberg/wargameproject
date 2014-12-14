@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Card
+{
+	private int points;
+	private String suit;
+	private int value;
+	private int suitVal;
+	private String suitStr;
+	public Card(int n, String s)
+	{
+		points=n;
+		suitStr=s;
+	}
+	public Card(int val)
+	{
+		String[] suits= {"Spades", "Clubs", "Hearts", "Diamonds"};
+		value=val;
+		suitVal=value/13;
+		suitStr=suits[suitVal];
+	}
+	public String toString()
+	{
+		String x = suitStr +" (point value = " + points+")";
+		return x;
+	}
+}
